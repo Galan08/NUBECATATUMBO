@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biblioteca virtual offline para la región del Catatumbo">
+    <meta name="theme-color" content="#2D5016">
+    <title>Nube Catatumbo - Aprende sin límites</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- HOME SCREEN -->
+        <div id="home" class="screen active">
+            <div class="header">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <div class="cloud-logo">
+                            <svg class="cloud-icon icon-fill" viewBox="0 0 24 24">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="app-title">
+                            <h1>Nube Catatumbo</h1>
+                            <p>Aprende sin límites</p>
+                        </div>
+                    </div>
+                    <div class="status-icon">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                            <circle cx="12" cy="20" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="welcome-card">
+                    <h2>¡Bienvenido! 👋</h2>
+                    <p>Explora recursos educativos diseñados especialmente para la región del Catatumbo. Aprende sobre tu cultura, historia y mucho más.</p>
+                </div>
+
+                <h3 class="section-title">
+                    <span>📚</span>
+                    Categorías
+                </h3>
+                <div class="categories-grid">
+                    <button class="category-card">
+                        <span class="category-icon">📊</span>
+                        <div class="category-name">Matemáticas</div>
+                    </button>
+                    <button class="category-card">
+                        <span class="category-icon">📖</span>
+                        <div class="category-name">Lenguaje</div>
+                    </button>
+                    <button class="category-card">
+                        <span class="category-icon">🔬</span>
+                        <div class="category-name">Ciencias</div>
+                    </button>
+                    <button class="category-card">
+                        <span class="category-icon">🏛️</span>
+                        <div class="category-name">Historia</div>
+                    </button>
+                </div>
+
+                <button class="action-btn">
+                    <span>📚 Mi Biblioteca</span>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <button class="action-btn share">
+                    <span>🔗 Compartir Recursos</span>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="18" cy="5" r="3"/>
+                        <circle cx="6" cy="12" r="3"/>
+                        <circle cx="18" cy="19" r="3"/>
+                        <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- LIBRARY SCREEN -->
+        <div id="library" class="screen">
+            <div class="header">
+                <button class="back-btn" onclick="navigateTo('home')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <h1 class="header-title">Mi Biblioteca</h1>
+                <p class="header-subtitle">Recursos disponibles offline</p>
+            </div>
+
+            <div class="content">
+                <h3 class="section-title">
+                    <span>✅</span>
+                    Descargados
+                </h3>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Matemáticas Básicas</div>
+                        <div class="resource-size">2.5 MB · PDF</div>
+                        <div class="downloaded-badge">
+                            <span>✓</span> Descargado
+                        </div>
+                    </div>
+                    <button class="resource-btn play" onclick="viewResource('Matemáticas Básicas')">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Historia del Catatumbo</div>
+                        <div class="resource-size">3.1 MB · PDF</div>
+                        <div class="downloaded-badge">
+                            <span>✓</span> Descargado
+                        </div>
+                    </div>
+                    <button class="resource-btn play" onclick="viewResource('Historia del Catatumbo')">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Cuentos Infantiles</div>
+                        <div class="resource-size">1.8 MB · PDF</div>
+                        <div class="downloaded-badge">
+                            <span>✓</span> Descargado
+                        </div>
+                    </div>
+                    <button class="resource-btn play" onclick="viewResource('Cuentos Infantiles')">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <h3 class="section-title" style="margin-top: 28px;">
+                    <span>⬇️</span>
+                    Disponibles para descargar
+                </h3>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎥</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Ciencias Naturales</div>
+                        <div class="resource-size">15 MB · Video</div>
+                    </div>
+                    <button class="resource-btn download" onclick="startDownload('Ciencias Naturales', '15 MB')">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🖼️</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Flora Regional</div>
+                        <div class="resource-size">5.2 MB · Imágenes</div>
+                    </div>
+                    <button class="resource-btn download" onclick="startDownload('Flora Regional', '5.2 MB')">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOWNLOAD SCREEN -->
+        <div id="downloading" class="screen">
+            <div class="header">
+                <h1 class="header-title">Descargando...</h1>
+            </div>
+
+            <div class="download-content">
+                <div class="download-icon-container">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                        <path d="M8 14l4 4 4-4M12 18V9"/>
+                    </svg>
+                </div>
+                
+                <h2 class="download-title" id="downloadTitle">Recurso</h2>
+                <p class="download-size" id="downloadSize">0 MB</p>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text"><span id="progressPercent">0</span>%</p>
+                </div>
+
+                <p class="progress-info">
+                    📥 El recurso estará disponible sin conexión una vez completada la descarga. Podrás acceder a él desde cualquier lugar.
+                </p>
+            </div>
+        </div>
+
+        <!-- VIEWER SCREEN -->
+        <div id="viewer" class="screen">
+            <div class="header">
+                <button class="back-btn" onclick="navigateTo('library')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <h1 id="viewerTitle" class="header-title">Recurso</h1>
+                <div class="offline-badge">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                    <span>Modo offline</span>
+                </div>
+            </div>
+
+            <div class="viewer-content">
+                <div class="content-card">
+                    <h2>Contenido del Recurso</h2>
+                    <p>Este es un ejemplo de cómo se vería el contenido educativo diseñado especialmente para estudiantes de la región del Catatumbo.</p>
+                    <p>Los estudiantes pueden leer textos, ver videos educativos, explorar imágenes y realizar actividades interactivas, todo sin necesidad de conexión a internet.</p>
+                    <p>El contenido está adaptado culturalmente para reflejar las tradiciones, historia y contexto de la región, haciendo el aprendizaje más relevante y significativo.</p>
+                    <div class="info-box">
+                        <p>💡 Todo el contenido funciona completamente sin conexión a internet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHARE SCREEN -->
+        <div id="share" class="screen">
+            <div class="header">
+                <button class="back-btn" onclick="navigateTo('home')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <h1 class="header-title">Compartir Recursos</h1>
+                <p class="header-subtitle">Vía Bluetooth</p>
+            </div>
+
+            <div class="content">
+                <div class="bluetooth-card">
+                    <div class="bluetooth-icon-container">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M6.5 6.5 17.5 17.5 12 23V1l5.5 5.5L6.5 17.5"/>
+                        </svg>
+                    </div>
+                    <h2 class="bluetooth-title">Bluetooth Activado</h2>
+                    <p class="bluetooth-subtitle">Buscando dispositivos cercanos...</p>
+                </div>
+
+                <h3 class="section-title">
+                    <span>📤</span>
+                    Recursos para Compartir
+                </h3>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Matemáticas Básicas</div>
+                        <div class="resource-size">2.5 MB · PDF</div>
+                    </div>
+                    <button class="send-btn">Enviar</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Historia del Catatumbo</div>
+                        <div class="resource-size">3.1 MB · PDF</div>
+                    </div>
+                    <button class="send-btn">Enviar</button>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <div class="resource-info">
+                        <div class="resource-title">Cuentos Infantiles</div>
+                        <div class="resource-size">1.8 MB · PDF</div>
+                    </div>
+                    <button class="send-btn">Enviar</button>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 Comparte recursos educativos con otros estudiantes y docentes de tu región sin necesidad de usar internet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
